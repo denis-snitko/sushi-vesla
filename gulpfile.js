@@ -160,31 +160,31 @@ const smartGrid = require('smart-grid');
 const options = {
     outputStyle: "scss",
     filename: "_smart-grid",
-    columns: 12, // number of grid columns
-    offset: "30px", // gutter width - 1.875rem
+    columns: 12,
+    offset: "24px",
     mobileFirst: false,
     mixinNames: {
         container: "container"
     },
     container: {
-        maxWidth: "1170px",
-        fields: "15px" // side fields - 0.9375rem
+        maxWidth: "1920px",
+        fields: "60px" 
     },
     breakPoints: {
         xs: {
-            width: "360px" // 20rem
+            width: "576px"
         },
         sm: {
-            width: "576px" // 36rem
+            width: "768px"
         },
         md: {
-            width: "768px" // 48rem
+            width: "992px"
         },
         lg: {
-            width: "992px" // 62rem
+            width: "1200px"
         },
         xl: {
-            width: "1200px" // 75rem
+            width: "1400px"
         }
     }
 };

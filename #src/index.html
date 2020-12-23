@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css" />
     <title>Сборка Gulp</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="main-body">
-        @@include('modules/header/_header.html')
-        <div class="main-content">
-            main content
+      @@include('modules/header/_header.html')
+      <div class="main-content">
+        @@include('modules/swiper/_swiper.html')
+        <div class="container">
+          @@include('modules/delivery-info/_delivery-info.html')
+          @@include('modules/catalog/_catalog.html')
+          <div class="main-section">
+            <div class="main-section__row">
+              <div class="main-section__left-col">
+                <h2 class="base-title main-section__base-title">
+                  Раздел подкаталога
+                </h2>
+                @@include('modules/main-section/_main-section.html')
+              </div>
+              <div class="main-section__right-col">
+                <h2 class="base-title main-section__base-title">Корзина</h2>
+                
+                <div class="main-section__card-wrapper">
+                  <div class="card">card</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
-        <footer>footer</footer>
+      </div>
     </div>
     <script src="./js/vendors.js"></script>
     <script src="./js/main.js"></script>
-</body>
-
+  </body>
 </html>

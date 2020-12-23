@@ -1,0 +1,47 @@
+.main-section {
+  padding: 23px 0;
+
+  &__row {
+    @include row-flex();
+  }
+
+  &__left-col,
+  &__right-col {
+    @include col();
+  }
+
+  &__left-col {
+    @include size(9.56);
+  }
+
+  &__right-col {
+    @include size(2.44);
+    overflow: hidden;
+  }
+
+  &__base-title {
+    margin-bottom: 20px;
+  }
+
+  &__product-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -6px;
+    margin-left: -6px;
+    padding-bottom: 12px;
+  }
+
+  &__product-item {
+    margin-right: 6px;
+    margin-bottom: 12px;
+    margin-left: 6px;
+  }
+
+  &__card-wrapper {
+    background: #f8f9fc;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: -10px -10px 10px #ffffff, 10px 10px 10px rgba(0, 0, 0, 0.05);
+  }
+}

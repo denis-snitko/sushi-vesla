@@ -1,0 +1,27 @@
+.delivery-info {
+  display: flex;
+  align-items: center;
+  padding-bottom: 45px;
+
+  &__search {
+    width: 100%;
+    max-width: 780px;
+    margin-right: 52px;
+
+    .search__label::before {
+      content: url("../img/svg/map-badge.svg");
+      top: -4px;
+    }
+
+    .search__input {
+      max-width: 780px;
+      padding-left: 55px;
+      text-align: left;
+    }
+  }
+
+  &__btn-info {
+    margin-left: 12px;
+  }
+}
+
