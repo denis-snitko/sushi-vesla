@@ -40,76 +40,74 @@ lazyload();
 
 const elMinusBtn = document.querySelector('.minus')
 const elPlusBtn = document.querySelector('.plus')
-const elCard = document.querySelector('.card')
 
-const products = {
-  "id1": 0,
-  "id2": 0,
-  "id3": 0,
-  "id4": 0,
-  "id5": 0,
-  "id6": 0,
-  "id7": 0,
-  "id8": 0,
-  "id9": 0,
-  "id10": 0,
-}
+const products = {}
 
 const plusFunction = (id) => {
-  products[id] ++
-  // console.log(event.target.dataset.id);
-  // (elCard.querySelector('.plus').dataset.id == id)
-  
-  if (products[id] > 1 ) {
-    elCard.querySelector('.plus')
-    elCard.querySelector('.plus').previousElementSibling.value = parseInt(products[id]);
+
+  if (!products[id]) {
+    products[id] = {
+      count: 1,
+      startPrice: document.querySelector(`[data-id="${id}"]`).closest('.product-item').querySelector('.price').innerText,
+      price: document.querySelector(`[data-id="${id}"]`).closest('.product-item').querySelector('.price').innerText,
+      title: document.querySelector(`[data-id="${id}"]`).closest('.product-item').querySelector('.product-item__title').innerText
+    }
   } else {
-    parseFunction(event.target, id, (products[id]))
+    products[id] = {
+      ...products[id],
+      count: ++products[id].count,
+      price: parseFloat(products[id].startPrice * products[id].count).toFixed(2)
+    }
   }
+  parseFunction(products)
 }
 
-const minusFunction = (id, event) => {
-  if (products[id] == 0) {
-    // elCard.querySelector('.plus').closest('.item-card').remove()
+const minusFunction = (id) => {
+  if (products[id].count == 1) {
+    delete products[id]
   } else {
-    products[id] -= 1
+    products[id] = {
+      ...products[id],
+      count: --products[id].count,
+      price: parseFloat(products[id].startPrice * products[id].count).toFixed(2)
+    }
   }
+  parseFunction(products)
 }
 
-const parseFunction = (item, id, count) => {
-  const title = item.closest('.product-item').querySelector('.product-item__title').textContent
-  const price = item.closest('.product-item').querySelector('.price').textContent
+const parseFunction = (products) => {
+  const cardList = document.querySelector('.card__list')
 
-  const itemCard = `
+  itemCard = Object.keys(products).map(item => (
+    `
     <div class="item-card card__item">
     <div class="item-card__text">
-      <div class="item-card__title">${title}</div>
-      <div class="item-card__price">${price} руб</div>
+      <div class="item-card__title">${products[item].title}</div>
+      <div class="item-card__price">${products[item].price} руб</div>
     </div>
     <div class="item-card__description">(10 шт - 554гр)</div>
     <div class="item-card__counter">
     <div class="counter">
       <form action="#">
-        <div class="minus" data-minus data-id="${id}">-</div>
-        <input type="text" value="${count}" data-counter />
-        <div class="plus" data-plus data-id="${id}">+</div>
+        <div class="minus" data-minus data-id="${item}">-</div>
+        <input type="text" value="${products[item].count}" data-counter />
+        <div class="plus" data-plus data-id="${item}">+</div>
       </form>
     </div>
     </div>
   </div>
   `
-    elCard.insertAdjacentHTML('afterbegin', itemCard)
+  )).join('')
+  
+  cardList.innerHTML = itemCard
 }
 
 document.body.addEventListener('click', event => {
-
   const id = event.target.dataset.id
-
   if (event.target.classList.contains('plus')) {
-    plusFunction(id, event)
+    plusFunction(id)
 
   } else if (event.target.classList.contains('minus')) {
-    minusFunction(id, event)
+    minusFunction(id)
   }
-
 })
