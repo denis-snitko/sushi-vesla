@@ -3,6 +3,7 @@
 
   &__row {
     @include row-flex();
+    min-height: 100%;
   }
 
   &__left-col,
@@ -15,8 +16,10 @@
   }
 
   &__right-col {
+    position: sticky;
+    top: 130px;
+    height: 100%;
     @include size(2.44);
-    overflow: hidden;
   }
 
   &__base-title {
@@ -38,7 +41,6 @@
   }
 
   &__card-wrapper {
-    background: #f8f9fc;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     overflow: hidden;

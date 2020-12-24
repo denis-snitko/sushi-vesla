@@ -1346,6 +1346,93 @@ body {
   padding: 15px;
 }
 
+.card__item {
+  margin-bottom: 7px;
+}
+
+.card__total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+.card__total-price {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.card__total-price--default {
+  color: #e31e24;
+  text-decoration: line-through;
+}
+
+.card__total-price--sale {
+  color: #000000;
+}
+
+.card__btn {
+  position: relative;
+  width: 100%;
+  padding: 14px 14px 14px 28px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  background: #5db300;
+  border-radius: 10px;
+}
+
+.card__btn::before {
+  content: url("../img/svg/card.svg");
+  position: absolute;
+  top: calc(50% - 12px);
+  left: 50px;
+  width: 24px;
+  height: 24px;
+}
+
+.item-card {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.item-card__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.item-card__price {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.item-card__description {
+  font-size: 10px;
+}
+
+.item-card__counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .footer {
   padding-top: 20px;
   border-top: 2px solid rgba(0, 0, 0, 0.05);
@@ -1447,7 +1534,12 @@ body {
 /* MAIN STYLES */
 
 .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 500;
   font-weight: 600;
+  background: #f8f9fc;
 }
 
 .header__wrapper {
@@ -1651,6 +1743,7 @@ body {
       flex-wrap: wrap;
   margin-left: -12px;
   margin-right: -12px;
+  min-height: 100%;
 }
 
 .main-section__left-col,
@@ -1667,8 +1760,11 @@ body {
 }
 
 .main-section__right-col {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 130px;
+  height: 100%;
   width: calc(20.33333% - 24px);
-  overflow: hidden;
 }
 
 .main-section__base-title {
@@ -1693,7 +1789,6 @@ body {
 }
 
 .main-section__card-wrapper {
-  background: #f8f9fc;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   overflow: hidden;

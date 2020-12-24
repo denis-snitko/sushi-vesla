@@ -1,4 +1,3 @@
-window.addEventListener('click', (event) => {
 
   const mainSwiper = new Swiper('.swiper-container', {
     slidesPerView: 'auto',
@@ -7,7 +6,10 @@ window.addEventListener('click', (event) => {
     initialSlide: 2,
     centeredSlides: true,
   });
+  
+  lazyload();
 
+  window.addEventListener('click', (event) => {
 
   // Counter minus
   if (event.target.hasAttribute('data-minus')) {

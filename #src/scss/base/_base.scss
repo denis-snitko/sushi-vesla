@@ -300,6 +300,77 @@ body {
 
 .card {
   padding: 15px;
+  &__item {
+    margin-bottom: 7px;
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3px;
+    margin-bottom: 10px;
+  }
+
+  &__total-price {
+    font-weight: 700;
+    font-size: 20px;
+
+    &--default {
+      color: #e31e24;
+      text-decoration: line-through;
+    }
+
+    &--sale {
+      color: #000000;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    width: 100%;
+    padding: 14px 14px 14px 28px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+    background: #5db300;
+    border-radius: 10px;
+
+    &::before {
+      content: url("../img/svg/card.svg");
+      position: absolute;
+      top: calc(50% - 12px);
+      left: 50px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.item-card {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__price {
+    flex-shrink: 0;
+  }
+
+  &__description {
+    font-size: 10px;
+  }
+
+  &__counter {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .footer {
