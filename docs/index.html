@@ -111,6 +111,13 @@
       <div class="catalog__col">
         <div class="catalog__item catalog-item">
           <a class="catalog-item__link" href="#"></a>
+          <img src="./img/catalog/catalog-item-img-1.png" alt="#" class="catalog-item__img">
+          <div class="catalog-item__text">Обеденное меню</div>
+        </div>
+      </div>
+      <div class="catalog__col">
+        <div class="catalog__item catalog-item">
+          <a class="catalog-item__link" href="#"></a>
           <img src="./img/catalog/catalog-item-img-5.png" alt="#" class="catalog-item__img">
           <div class="catalog-item__text">Футо Маки</div>
         </div>
@@ -132,6 +139,13 @@
       <div class="catalog__col">
         <div class="catalog__item catalog-item">
           <a class="catalog-item__link" href="#"></a>
+          <img src="./img/catalog/catalog-item-img-1.png" alt="#" class="catalog-item__img">
+          <div class="catalog-item__text">Обеденное меню</div>
+        </div>
+      </div>
+      <div class="catalog__col">
+        <div class="catalog__item catalog-item">
+          <a class="catalog-item__link" href="#"></a>
           <img src="./img/catalog/catalog-item-img-8.png" alt="#" class="catalog-item__img">
           <div class="catalog-item__text">СушиРрито</div>
         </div>
@@ -141,6 +155,13 @@
           <a class="catalog-item__link" href="#"></a>
           <img src="./img/catalog/catalog-item-img-9.png" alt="#" class="catalog-item__img">
           <div class="catalog-item__text">Сеты</div>
+        </div>
+      </div>
+      <div class="catalog__col">
+        <div class="catalog__item catalog-item">
+          <a class="catalog-item__link" href="#"></a>
+          <img src="./img/catalog/catalog-item-img-1.png" alt="#" class="catalog-item__img">
+          <div class="catalog-item__text">Обеденное меню</div>
         </div>
       </div>
       <div class="catalog__col">
@@ -203,14 +224,14 @@
     </div>
     <div class="product-item__title">Нигири с тунцом опаленным</div>
     <div class="product-item__price">
-      <p>5.60<span> руб. за 1 порцию (8шт)</span></p>
+      <p><span class="price">5.60</span><span class="small-descr"> руб. за 1 порцию (8шт)</span></p>
     </div>
     <div class="product-item__counter">
       <div class="counter">
         <form action="#">
-          <div class="minus" data-minus>-</div>
+          <div class="minus" data-minus data-id="id1">-</div>
           <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
+          <div class="plus" data-plus data-id="id1">+</div>
         </form>
       </div>
     </div>
@@ -221,15 +242,15 @@
     </div>
     <div class="product-item__title">Спайси текка маки</div>
     <div class="product-item__price">
-      <p>5.60<span> руб. за 1 порцию (8шт)</span></p>
-      <p>3.10<span> руб. за 1/2 порции (4шт)</span></p>
+      <p><span class="price">5.60</span><span class="small-descr"> руб. за 1 порцию (8шт)</span></p>
+      <p>3.10<span class="small-descr"> руб. за 1/2 порции (4шт)</span></p>
     </div>
     <div class="product-item__counter">
       <div class="counter">
         <form action="#">
-          <div class="minus" data-minus>-</div>
+          <div class="minus" data-minus data-id="id2">-</div>
           <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
+          <div class="plus" data-plus data-id="id2">+</div>
         </form>
       </div>
     </div>
@@ -240,14 +261,14 @@
     </div>
     <div class="product-item__title">Корпоративный переполох на 22 человек</div>
     <div class="product-item__price">
-      <p>252.90<span>руб. за 1 порцию (1шт)</span></p>
+      <p><span class="price">252.90</span><span class="small-descr">руб. за 1 порцию (1шт)</span></p>
     </div>
     <div class="product-item__counter">
       <div class="counter">
         <form action="#">
-          <div class="minus" data-minus>-</div>
+          <div class="minus" data-minus data-id="id3">-</div>
           <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
+          <div class="plus" data-plus data-id="id3">+</div>
         </form>
       </div>
     </div>
@@ -258,128 +279,19 @@
     </div>
     <div class="product-item__title">Нигири с тунцом маринованным</div>
     <div class="product-item__price">
-      <p>2.90<span>руб. за 1 порцию (8шт)</span></p>
+      <p><span class="price">2.90</span><span class="small-descr">руб. за 1 порцию (8шт)</span></p>
     </div>
     <div class="product-item__counter">
       <div class="counter">
         <form action="#">
-          <div class="minus" data-minus>-</div>
+          <div class="minus" data-minus data-id="id4">-</div>
           <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
+          <div class="plus" data-plus data-id="id4">+</div>
         </form>
       </div>
     </div>
   </div>
-  <div class="product-item main-section__product-item">
-    <div class="product-item__img">
-      <img class="lazyload" data-src="./img/products/product-1.png" src="./img/products/no-img.png" alt="#"  />
-    </div>
-    <div class="product-item__title">Нигири с тунцом опаленным</div>
-    <div class="product-item__price">
-      <p>5.60<span> руб. за 1 порцию (8шт)</span></p>
-    </div>
-    <div class="product-item__counter">
-      <div class="counter">
-        <form action="#">
-          <div class="minus" data-minus>-</div>
-          <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="product-item main-section__product-item">
-    <div class="product-item__img">
-      <img class="lazyload" data-src="./img/products/product-2.png" src="./img/products/no-img.png" alt="#" />
-    </div>
-    <div class="product-item__title">Спайси текка маки</div>
-    <div class="product-item__price">
-      <p>5.60<span> руб. за 1 порцию (8шт)</span></p>
-      <p>3.10<span> руб. за 1/2 порции (4шт)</span></p>
-    </div>
-    <div class="product-item__counter">
-      <div class="counter">
-        <form action="#">
-          <div class="minus" data-minus>-</div>
-          <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="product-item main-section__product-item">
-    <div class="product-item__img">
-      <img class="lazyload" data-src="./img/products/product-3.png" src="./img/products/no-img.png" alt="#" />
-    </div>
-    <div class="product-item__title">Корпоративный переполох на 22 человек</div>
-    <div class="product-item__price">
-      <p>252.90<span>руб. за 1 порцию (1шт)</span></p>
-    </div>
-    <div class="product-item__counter">
-      <div class="counter">
-        <form action="#">
-          <div class="minus" data-minus>-</div>
-          <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="product-item main-section__product-item">
-    <div class="product-item__img">
-      <img class="lazyload" data-src="./img/products/product-2.png" src="./img/products/no-img.png" alt="#" />
-    </div>
-    <div class="product-item__title">Нигири с тунцом маринованным</div>
-    <div class="product-item__price">
-      <p>2.90<span>руб. за 1 порцию (8шт)</span></p>
-    </div>
-    <div class="product-item__counter">
-      <div class="counter">
-        <form action="#">
-          <div class="minus" data-minus>-</div>
-          <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="product-item main-section__product-item">
-    <div class="product-item__img">
-      <img class="lazyload" data-src="./img/products/product-3.png" src="./img/products/no-img.png" alt="#" />
-    </div>
-    <div class="product-item__title">Корпоративный переполох на 22 человек</div>
-    <div class="product-item__price">
-      <p>252.90<span>руб. за 1 порцию (1шт)</span></p>
-    </div>
-    <div class="product-item__counter">
-      <div class="counter">
-        <form action="#">
-          <div class="minus" data-minus>-</div>
-          <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="product-item main-section__product-item">
-    <div class="product-item__img">
-      <img class="lazyload" data-src="./img/products/product-2.png" src="./img/products/no-img.png" alt="#" />
-    </div>
-    <div class="product-item__title">Нигири с тунцом маринованным</div>
-    <div class="product-item__price">
-      <p>2.90<span>руб. за 1 порцию (8шт)</span></p>
-    </div>
-    <div class="product-item__counter">
-      <div class="counter">
-        <form action="#">
-          <div class="minus" data-minus>-</div>
-          <input type="text" value="1" data-counter />
-          <div class="plus" data-plus>+</div>
-        </form>
-      </div>
-    </div>
-  </div>
-
+  
   <div class="product-item sda-block main-section__product-item">
     <img src="./img/banner.png" alt="#" />
   </div>
@@ -456,15 +368,12 @@
               </div>
               <div class="main-section__right-col">
                 <h2 class="base-title main-section__base-title">Корзина</h2>
-
                 <div class="main-section__card-wrapper">
                   <div class="card">
 
                     <div class="item-card card__item">
                       <div class="item-card__text">
-                        <div class="item-card__title">
-                          Сет "Только мне"
-                        </div>
+                        <div class="item-card__title">Сет "Только мне"</div>
                         <div class="item-card__price">16.50 руб</div>
                       </div>
                       <div class="item-card__description">(10 шт - 554гр)</div>
@@ -478,38 +387,15 @@
                         </div>
                       </div>
                     </div>
-
-                    <div class="item-card card__item">
-                      <div class="item-card__text">
-                        <div class="item-card__title">
-                          Нигири с тунцом опаленным
-                        </div>
-                        <div class="item-card__price">8 руб</div>
-                      </div>
-                      <div class="item-card__description">(8 шт - 250гр)</div>
-                      <div class="item-card__counter">
-                        <div class="counter">
-                          <form action="#">
-                            <div class="minus" data-minus>-</div>
-                            <input type="text" value="1" data-counter />
-                            <div class="plus" data-plus>+</div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-
+                    
                     <div class="card__total">
-                      <div class="card__total-text">
-                        Сумма со скидкой
-                      </div>
+                      <div class="card__total-text">Сумма со скидкой</div>
                       <div class="card__total-price">
                         <p class="card__total-price--default">60.80 руб</p>
                         <p class="card__total-price--sale">59.80 руб</p>
                       </div>
                     </div>
-
                     <button class="card__btn btn-reset">Оформить заказ</button>
-
                   </div>
                 </div>
               </div>
@@ -518,6 +404,16 @@
         </div>
       </div>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
+      integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA=="
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/vendors.js"></script>
     <script src="./js/main.js"></script>
   </body>

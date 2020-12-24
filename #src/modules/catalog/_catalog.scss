@@ -1,6 +1,22 @@
 .catalog {
+  overflow-x: scroll;
+  scrollbar-color: #cccccc #ffffff; /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;
+
+  /* полоса прокрутки (скроллбар) */
+  &::-webkit-scrollbar {
+    height: 4px;
+    background-color: #ffffff;
+  }
+
+  /* ползунок скроллбара */
+  &::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+  }
+
   &__row {
     @include row-flex();
+    flex-wrap: nowrap;
     // justify-content: space-between;
     margin-right: -10px;
     margin-left: -10px;
@@ -18,4 +34,3 @@
     margin-left: 10px;
   }
 }
-
