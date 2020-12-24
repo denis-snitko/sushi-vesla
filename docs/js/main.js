@@ -7,8 +7,6 @@ const mainSwiper = new Swiper('.swiper-container', {
   centeredSlides: true,
 });
 
-lazyload();
-
 window.addEventListener('click', (event) => {
 
   // Counter minus
@@ -35,30 +33,50 @@ $(() => {
   });
 })
 
-const elminusBtn = document.querySelector('.minus')
+lazyload();
+
+
+///////////////////////////////////////////
+
+const elMinusBtn = document.querySelector('.minus')
 const elPlusBtn = document.querySelector('.plus')
 const elCard = document.querySelector('.card')
 
 const products = {
-  "id1": 1,
-  "id2": 1,
-  "id3": 1,
-  "id4": 1,
-  "id5": 1,
-  "id6": 1,
-  "id7": 1,
-  "id8": 1,
-  "id9": 1,
-  "id10": 1,
+  "id1": 0,
+  "id2": 0,
+  "id3": 0,
+  "id4": 0,
+  "id5": 0,
+  "id6": 0,
+  "id7": 0,
+  "id8": 0,
+  "id9": 0,
+  "id10": 0,
 }
 
-const plusFunction = id => {
-  products[id] += 1
+const plusFunction = (id) => {
+  products[id] ++
+  // console.log(event.target.dataset.id);
+  // (elCard.querySelector('.plus').dataset.id == id)
+  
+  if (products[id] > 1 ) {
+    elCard.querySelector('.plus')
+    elCard.querySelector('.plus').previousElementSibling.value = parseInt(products[id]);
+  } else {
+    parseFunction(event.target, id, (products[id]))
+  }
 }
-const minusFunction = id => {
-  products[id] == 0 ? products[id] = 1 : products[id] -= 1
+
+const minusFunction = (id, event) => {
+  if (products[id] == 0) {
+    // elCard.querySelector('.plus').closest('.item-card').remove()
+  } else {
+    products[id] -= 1
+  }
 }
-const parseFunction = (item, id) => {
+
+const parseFunction = (item, id, count) => {
   const title = item.closest('.product-item').querySelector('.product-item__title').textContent
   const price = item.closest('.product-item').querySelector('.price').textContent
 
@@ -73,19 +91,14 @@ const parseFunction = (item, id) => {
     <div class="counter">
       <form action="#">
         <div class="minus" data-minus data-id="${id}">-</div>
-        <input type="text" value="${products[id]}" data-counter />
+        <input type="text" value="${count}" data-counter />
         <div class="plus" data-plus data-id="${id}">+</div>
       </form>
     </div>
     </div>
   </div>
   `
- 
-
-  if ((elCard.querySelector('.plus').dataset.id) != id) {
     elCard.insertAdjacentHTML('afterbegin', itemCard)
-
-  } 
 }
 
 document.body.addEventListener('click', event => {
@@ -93,10 +106,10 @@ document.body.addEventListener('click', event => {
   const id = event.target.dataset.id
 
   if (event.target.classList.contains('plus')) {
-    plusFunction(id)
-    parseFunction(event.target, id)
+    plusFunction(id, event)
+
   } else if (event.target.classList.contains('minus')) {
-    minusFunction(id)
+    minusFunction(id, event)
   }
 
 })
