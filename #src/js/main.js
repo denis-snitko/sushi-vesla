@@ -39,7 +39,7 @@ lazyload ();
 
 ///////////////////////////////////////////
 
-const products = []
+const products = {}
 
 
 const plusFunction = (id) => {
@@ -60,6 +60,10 @@ const plusFunction = (id) => {
       price: parseFloat (products[id].startPrice * products[id].count).toFixed (2)
     }
   }
+  let result = Object.keys(products).reduce((sum, elem) => {
+    return sum + parseFloat(products[elem].price);
+  }, 0);
+  console.log(result.toFixed(2));
   parseFunction (products)
 }
 
@@ -73,6 +77,10 @@ const minusFunction = (id) => {
       price: parseFloat (products[id].startPrice * products[id].count).toFixed (2)
     }
   }
+  let result = Object.keys(products).reduce((sum, elem) => {
+    return sum + parseFloat(products[elem].price);
+  }, 0);
+  console.log(result.toFixed(2));
   parseFunction (products)
 }
 
