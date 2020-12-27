@@ -1,3 +1,34 @@
+const options = {
+    outputStyle: "scss",
+    filename: "_smart-grid",
+    columns: 12,
+    offset: "24px",
+    mobileFirst: false,
+    mixinNames: {
+        container: "container"
+    },
+    container: {
+        maxWidth: "1920px",
+        fields: "60px" 
+    },
+    breakPoints: {
+        xs: {
+            width: "576px"
+        },
+        sm: {
+            width: "768px"
+        },
+        md: {
+            width: "992px"
+        },
+        lg: {
+            width: "1200px"
+        },
+        xl: {
+            width: "1400px"
+        }
+    }
+};
 
 let projectFolder = require("path").basename("docs");
 let sourceFolder = "#src";
@@ -157,37 +188,7 @@ function fontsStyle() { //gulp fontsStyle
 }
 
 const smartGrid = require('smart-grid');
-const options = {
-    outputStyle: "scss",
-    filename: "_smart-grid",
-    columns: 12,
-    offset: "24px",
-    mobileFirst: false,
-    mixinNames: {
-        container: "container"
-    },
-    container: {
-        maxWidth: "1920px",
-        fields: "60px" 
-    },
-    breakPoints: {
-        xs: {
-            width: "576px"
-        },
-        sm: {
-            width: "768px"
-        },
-        md: {
-            width: "992px"
-        },
-        lg: {
-            width: "1200px"
-        },
-        xl: {
-            width: "1400px"
-        }
-    }
-};
+
 function grid(done) {
     smartGrid("./#src/scss/vendor/import/", options);
     done();

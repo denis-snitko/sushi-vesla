@@ -1,4 +1,6 @@
 .catalog {
+  position: relative;
+  z-index: 500;
   overflow-x: scroll;
   scrollbar-color: #cccccc #ffffff; /* «цвет ползунка» «цвет полосы скроллбара» */
   scrollbar-width: thin;

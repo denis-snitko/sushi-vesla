@@ -1,7 +1,7 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 500;
+  z-index: 2000;
   font-weight: 600;
   background: #f8f9fc;
   
@@ -24,7 +24,7 @@
     
     @media screen and (max-width: 1751px) {
       & {
-        justify-content: center;
+        justify-content: space-between;
         width: 100%;
         margin-top: 40px;
       }
@@ -99,11 +99,13 @@
     margin-right: 92px;
     @media screen and (max-width: 1751px) {
       & {     
+        flex-grow: 1;
         max-width: auto;
       }
     }
 
     @include sm-block() {
+      display: none;
       margin-right: 0;
     }
   }

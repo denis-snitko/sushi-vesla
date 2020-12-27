@@ -2,26 +2,57 @@
   display: flex;
   align-items: center;
   padding-bottom: 45px;
+  
+  @include xl-block() {
+    flex-wrap: wrap;
+  }
+
+  @include lg-block() {
+    padding-bottom: 24px;
+  }
+
+  @include xs-block() {
+    justify-content: center;
+  }
 
   &__search {
     width: 100%;
     max-width: 780px;
     margin-right: 52px;
 
+    @include xs-block() {
+      max-width: auto;
+      margin-right: 0;
+    }
+
     .search__label::before {
       content: url("../img/svg/map-badge.svg");
       top: -4px;
     }
 
+
     .search__input {
       max-width: 780px;
       padding-left: 55px;
       text-align: left;
+
+      @include xl-block() {
+        margin-bottom: 24px;
+      }
     }
   }
 
   &__btn-info {
     margin-left: 12px;
+    white-space: nowrap;
+
+    @include lg-block() {
+      margin-bottom: 24px;
+    }
+
+    @include xs-block() {
+      margin-left: 0;
+    }
   }
 }
 

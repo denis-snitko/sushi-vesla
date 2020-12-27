@@ -3,7 +3,18 @@
 
   &__row {
     @include row-flex();
+    flex-wrap: nowrap;
     min-height: 100%;
+
+    @include md-block() {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      order: 2;
+    }
+
+    @include xs-block() {
+      text-align: center;
+    }
   }
 
   &__left-col,
@@ -13,13 +24,30 @@
 
   &__left-col {
     @include size(9.56);
+    
+
+    @include md-block() {
+      order: 2;
+      width: 100%;
+      margin-top: 24px;
+    }
   }
 
   &__right-col {
     position: sticky;
     top: 130px;
+    min-width: 330px;
     height: 100%;
     @include size(2.44);
+    background: #f8f9fc;
+    
+    @include md-block() {
+      position: static;
+      z-index: 200;
+      order: 1;
+      width: 100%;
+      padding-top: 24px;
+    }
   }
 
   &__base-title {
@@ -32,6 +60,10 @@
     margin-right: -6px;
     margin-left: -6px;
     padding-bottom: 12px;
+
+    @include md-block() {
+    justify-content: center;
+    }
   }
 
   &__product-item {

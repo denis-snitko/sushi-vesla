@@ -1,4 +1,5 @@
 body {
+  position: relative;
   background: #f8f9fc;
 }
 .main-body {
@@ -13,6 +14,10 @@ body {
 
 .container {
   @include container();
+
+  @include md-block() {
+    padding: 0 15px;
+  }
 }
 
 .btn-reset {
@@ -23,6 +28,12 @@ body {
 .menu {
   font-weight: 600;
   font-size: 20px;
+  white-space: nowrap;
+
+  @include xs-block() {
+    padding-bottom: 22px;
+    overflow-x: scroll;
+  }
 
   &__list {
     display: flex;
@@ -42,7 +53,6 @@ body {
     &--active {
       border-bottom: 2px solid #e31e24;
     }
-
 
     @include md-block() {
       padding: 0 0 14px 0;
@@ -134,6 +144,10 @@ body {
   padding: 0 24px 0 40px;
   font-weight: 500;
   font-size: 14px;
+
+  @include xs-block() {
+    margin-bottom: 24px;
+  }
 
   &::before {
     position: absolute;
@@ -386,19 +400,40 @@ body {
   &__row {
     display: flex;
     justify-content: space-between;
+    margin: 0 15px;
+
+    @include sm-block() {
+      flex-wrap: wrap;
+    }
   }
 
   &__col-left {
     max-width: 58%;
+    padding-right: 15px;
+    @include sm-block() {
+      padding-right: 0;
+    }
   }
   &__col-right {
     max-width: 42%;
+  }
+
+  &__col-left,
+  &__col-right {
+    @include sm-block() {
+      max-width: 100%;
+    }
   }
 
   &__logo-wrapper {
     display: flex;
     justify-content: space-between;
     margin-bottom: 43px;
+
+    @include xs-block() {
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
 
     .footer__big-text {
       display: flex;
@@ -415,6 +450,13 @@ body {
   &__logo {
     width: 225px;
     height: 80px;
+    margin-right: 15px;
+
+    @include xs-block() {
+      margin-right: auto;
+      margin-bottom: 24px;
+      margin-left: auto;
+    }
   }
 
   &__big-text {
@@ -456,5 +498,73 @@ body {
         color: #000000;
       }
     }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.05);
+
+  &__body {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    padding: 60px 50px;
+    background: #f8f9fc;
+    border-radius: 20px;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+  }
+
+  &__close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    
+    @include xs-block() {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+
+    @include xs-block() {
+      justify-content: center;
+      svg {
+        display: none;
+      
+      }
+    }
+  }
+
+  &__text {
+  }
+
+  &__small-title {
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &__descr {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 18px;
   }
 }
